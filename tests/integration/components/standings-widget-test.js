@@ -11,5 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{standings-widget}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), 'Standings');
 });
