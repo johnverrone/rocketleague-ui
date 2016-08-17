@@ -1,0 +1,17 @@
+{{#md-navbar name='Rocket League'}}
+  <!-- A workaround to get the "active" class
+    to apply to the active <li> automatically -->
+  {{#link-to 'matches' tagName='li'}}
+    {{link-to 'Matches' 'matches'}}
+  {{/link-to}}
+  {{#link-to 'teams' tagName='li'}}
+    {{link-to 'Teams' 'teams'}}
+  {{/link-to}}
+  {{#link-to 'players' tagName='li'}}
+    {{link-to 'Players' 'players'}}
+  {{/link-to}}
+{{/md-navbar}}
+
+<div class="container">
+  {{outlet}}
+</div>

@@ -1,0 +1,24 @@
+{{#md-card-panel id='match-card' class='rl-card'}}
+  <div class="rl-card-header">
+    <h3>Standings</h3>
+  </div>
+  
+  <div class="rl-card-body">
+    {{#md-table content=teams class='bordered' as |team|}}
+      {{#md-table-col row=team key='id' header='Team Id'}}
+        {{team.id}}
+      {{/md-table-col}}
+      {{#md-table-col row=team key='name' header='Team Name'}}
+        {{team.name}}
+      {{/md-table-col}}
+      {{#md-table-col row=team key='wins' header='Wins'}}
+        {{team.wins}}
+      {{/md-table-col}}
+      {{#md-table-col row=team key='loses' header='Loses'}}
+        {{team.loses}}
+      {{/md-table-col}}
+    {{/md-table}}
+
+    <!--<input type="text" id="new-team" onkeydown={{action 'createTeam'}} placeholder="New team" autofocus>-->
+  </div>
+{{/md-card-panel}}

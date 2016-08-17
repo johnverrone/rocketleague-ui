@@ -1,0 +1,98 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+@import 'components/color';
+
+// Custom color settings go here
+$primary-color: #1E262B;
+$background-color: #222c32;
+$light-color: #D8DADA;
+$card-color: #2b343a;
+
+
+@import 'components/variables';
+@import "materialize";
+@import 'ember-cli-materialize';
+
+html {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+body {
+  background-color: $background-color;
+  color: $light-color;
+}
+
+nav .brand-logo {
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+th {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+tr {
+  border-bottom: 1px solid rgba(255,255,255,.02) !important;
+}
+
+.background {
+  background-color: $background-color !important;
+}
+
+.primary {
+  color: $primary-color !important;
+}
+
+.light {
+  background-color: $light-color !important;
+  color: $primary-color !important;
+}
+
+.rl-collection {
+  border: none;
+}
+
+.rl-collection .rl-collection-item {
+  background-color: $card-color;
+  border: none;
+}
+
+.rl-collection .rl-collection-item.avatar {
+    min-height: inherit;
+}
+
+.rl-card {
+  background-color: $card-color;
+  padding: 0;
+}
+
+.rl-card-header {
+  background-color: rgba(255,255,255,.02);
+  position: relative;
+  padding: 12px 25px;
+}
+
+.rl-card-body {
+  position: relative;
+  padding: 20px;
+}
+
+.break-edge {
+  position: absolute;
+  left: 85%;
+  top: -25px;
+}
+
+.modal {
+  overflow-y: visible;
+}

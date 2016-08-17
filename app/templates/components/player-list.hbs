@@ -1,0 +1,22 @@
+{{#md-card-panel id='match-card' class='rl-card'}}
+  <div class="rl-card-header">
+    <h3>{{title}}</h3>
+  </div>
+  
+  <div class="rl-card-body">
+    {{#md-table content=players class='bordered' as |player|}}
+      {{#md-table-col row=player key='id' header='Player Id'}}
+        {{player.id}}
+      {{/md-table-col}}
+      {{#md-table-col row=player key='username' header='Username'}}
+        {{player.username}}
+      {{/md-table-col}}
+      {{#md-table-col row=player key='firstName' header='First Name'}}
+        {{player.firstName}}
+      {{/md-table-col}}
+      {{#md-table-col row=player key='lastName' header='Last Name'}}
+        {{player.lastName}}
+      {{/md-table-col}}
+    {{/md-table}}
+  </div>
+{{/md-card-panel}}

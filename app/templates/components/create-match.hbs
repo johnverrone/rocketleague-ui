@@ -1,0 +1,25 @@
+{{#md-btn action='openModal' buttonType='floating'
+    class='btn-large light break-edge'}}
+    <i class="material-icons primary">add</i>
+{{/md-btn}}
+
+{{#if modalIsOpen}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+          <form {{action "submit" on="submit"}} class="row">
+            {{md-input type="number" value=blueTeam label="Blue Team ID" class="col s4"}} 
+            {{md-input type="number" value=orangeTeam label="Orange Team ID" class="col s4"}} 
+            {{md-input type="text" value=matchDate label="Match Date" class="col s4"}} 
+          </form>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'submit'}}>
+                Create
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}
+
