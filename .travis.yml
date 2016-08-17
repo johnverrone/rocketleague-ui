@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: lOirPkHDKfQP2S0cohTe3ylLOmGs67JsNQwc5nx8iu0fZ0gh7MlbfQ2VgqEM6F1zgqIz30UpMxl5kzs4uMMKP3022Iiis7jY07KcM3FNZzSGF/9m/IbqBiu7/6klgYqxnF0VD0ID4EL//hoDZcTVZcxhFIIZmhGz4ZkIeOCIp6+c6lznjC/hbOQBrbFRrRK50ig1OKmDIcjKeavlWh6dWgBsOwFp3TSpiZDkDpuyxxdeuaDYlnHRqH1X0xKZ8ewcBIT+2aeyKYRr7RmtxBUXoFndV0/2Jt2/Sp8qIlMMCuGeUu0lCGd0gUm4IS0djxDgujxdIUQ5jLd6YIcKyWr2VVZT76oEXuTUFughGpAgmLwyUZIr2LW13bvYGiChOPoqKFMN6y+8Gm9UTPBncXDPdP+wPGz1HeXIdkMafIM0J3IVadnrY4oXc9qt8HQhpT4U0tyvnvP3F8B3hpdXTliBH4v2uPu/JN3WZVvEQjJTYII8F21M2Px6G07G3Al8RZ0oMPeiNgZRxjaf246e1Qm4q1eIDYk0No3kjBVpAUuy6Ebe6pkDwIt34klFdLVti+DeB0Q3AXD7sfcgkef1MH8Wtvy2NOA1Wv8EV6rtXs/xM9e/emvXMHwGkqLGnj+M6lA0AlLbDG46lwvMkKUFPnnRQ9UelthTb85/qEXZzBhnr30=
+  app: atl-rlc
+  on:
+    repo: jverrone3/rocketleague-ui
