@@ -42,7 +42,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host: 'https://radiant-brook-24996.herokuapp.com';
+    ENV.DS.host = 'https://radiant-brook-24996.herokuapp.com';
   }
 
   return ENV;
