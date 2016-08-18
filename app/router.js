@@ -10,6 +10,10 @@ Router.map(function() {
   this.route('players');
   this.route('teams');
   this.route('matches');
+
+  this.route('auth', function() {
+    this.route('register');
+  });
 });
 
 export default Router;
