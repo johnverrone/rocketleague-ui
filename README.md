@@ -1,4 +1,4 @@
-# Rocketleague-ember
+# Rocket League UI - Ember
 
 [![Build Status](https://travis-ci.org/jverrone3/rocketleague-ui.svg?branch=master)](https://travis-ci.org/jverrone3/rocketleague-ui)
 
