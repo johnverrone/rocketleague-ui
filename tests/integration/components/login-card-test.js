@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('register-card', 'Integration | Component | register card', {
+moduleForComponent('login-card', 'Integration | Component | login card', {
   integration: true
 });
 
@@ -9,8 +9,8 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{register-card}}`);
+  this.render(hbs`{{login-card}}`);
 
   assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 
-    'NewUserEmailPasswordConfirmPasswordRegister');
+    'LoginEmailPasswordLogin');
 });

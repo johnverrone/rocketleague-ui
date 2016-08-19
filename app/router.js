@@ -13,6 +13,7 @@ Router.map(function() {
 
   this.route('auth', function() {
     this.route('register');
+    this.route('login');
   });
 });
 

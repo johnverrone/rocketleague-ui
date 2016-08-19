@@ -1,14 +1,13 @@
-{{#md-card-panel id='register-card' class='rl-card'}}
+{{#md-card-panel id='login-card' class='rl-card'}}
   <div class="rl-card-header">
-    <h3>New User</h3>
+    <h3>Login</h3>
   </div>
   
   <div class="rl-card-body">
-    <form {{action "doRegister" on="submit"}} >
+    <form {{action "login" on="submit"}}>
       <div class="row">{{md-input type="text" value=model.email label="Email" class="col s12"}}</div> 
       <div class="row">{{md-input type="password" value=model.password label="Password" class="col s12"}}</div> 
-      <div class="row">{{md-input type="password" value=model.passwordConfirmation label="Confirm Password" class="col s12"}}</div>  
-      {{md-btn-submit class='light' text='Register'}}
+      {{md-btn-submit class='light' text='Login'}}
     </form>
   </div>
 {{/md-card-panel}}
