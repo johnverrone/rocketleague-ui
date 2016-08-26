@@ -22,8 +22,8 @@ module.exports = function(environment) {
     },
     'ember-simple-auth': {
       authenticationRoute: 'auth.login',
-      routeIfAlreadyAuthenticated: 'app.index',
-      routeAfterAuthentication: 'app.index'
+      routeIfAlreadyAuthenticated: 'app.teams',
+      routeAfterAuthentication: 'app.teams'
     }
   };
 

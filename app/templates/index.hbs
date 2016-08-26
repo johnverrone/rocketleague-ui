@@ -1,4 +1,21 @@
+{{#md-navbar name='Rocket League'}}
+{{/md-navbar}}
+
 <div class="container">
-  {{link-to 'Register' 'auth.register'}}
-  {{link-to 'Enter Rocket Leage' 'app.index'}}
+  {{#md-card-panel id='login-card' class='rl-card'}}
+    <div class="rl-card-header">
+      <h3>Welcome</h3>
+    </div>
+    
+    <div class="rl-card-body">
+      <div class="row">
+        {{#md-btn class='col s6 light'}}
+            {{link-to 'Register' 'auth.register'}}
+        {{/md-btn}}
+        {{#md-btn class='col s6 light'}}
+            {{link-to 'Enter App' 'app.index'}}
+        {{/md-btn}}
+      </div>
+    </div>
+  {{/md-card-panel}}
 </div>

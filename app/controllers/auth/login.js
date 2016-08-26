@@ -8,7 +8,11 @@ export default Controller.extend({
     login() {
       const user = this.get('model');
       this.get('session')
-        .authenticate('authenticator:rocketleague', user.email, user.password);
+        .authenticate('authenticator:rocketleague', user.email, user.password)
+        .then(() => {
+          // Successful Login
+          this.transitionToRoute('app.teams');
+        })
     }
   }
 });
