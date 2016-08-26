@@ -12,7 +12,7 @@ export default Controller.extend({
         .then(() => {
           // Successful Login
           this.transitionToRoute('app.teams');
-        })
+        });
     }
   }
 });
