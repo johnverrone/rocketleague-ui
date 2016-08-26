@@ -5,9 +5,12 @@ import config from '../config/environment';
 export default DS.JSONAPIAdapter.extend({
   host: config.DS.host,
   namespace: config.DS.namespace,
+  authorizer: 'authorizer:oauth2',
+
   pathForType: function(type) {
     return Ember.String.pluralize(Ember.String.underscore(type));
   },
+  
   urlForCreateRecord(modelName/*, snapshot*/) {
     switch(modelName) {
       case 'user':

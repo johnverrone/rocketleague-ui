@@ -7,13 +7,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('players');
-  this.route('teams');
-  this.route('matches');
-
   this.route('auth', function() {
     this.route('register');
     this.route('login');
+  });
+  
+  this.route('app', function() {
+    this.route('players');
+    this.route('teams');
+    this.route('matches');
   });
 });
 
