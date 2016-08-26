@@ -13,6 +13,9 @@ export default Controller.extend({
           // Successful Login
           this.transitionToRoute('app.teams');
         });
+    },
+    routeToRegister() {
+      this.transitionToRoute('auth.register');
     }
   }
 });

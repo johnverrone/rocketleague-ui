@@ -12,5 +12,5 @@ test('it renders', function(assert) {
   this.render(hbs`{{login-card}}`);
 
   assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 
-    'LoginEmailPasswordLogin');
+    'LoginEmailPasswordLoginRegister');
 });
