@@ -4,7 +4,7 @@
   </div>
   
   <div class="rl-card-body">
-    {{create-match onCreate=(action 'createMatch')}}
+    {{create-match teams=teams onCreate=(action 'createMatch')}}
     {{#md-collection content=matches class='rl-collection' as |match|}}
       <div class="collection-item rl-collection-item avatar">
         <i class="circle light material-icons">games</i>
