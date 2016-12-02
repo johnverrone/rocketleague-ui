@@ -1,0 +1,17 @@
+<div class="collection-item rl-collection-item avatar">
+    <div class="row">
+        <i class="circle light material-icons">games</i>
+        <div class="col s4">
+            <span class="title">{{match.blueTeam.name}} v. {{match.orangeTeam.name}}</span>
+            <p>{{match.matchDate}}</p>
+        </div>
+        <div class="col s8">
+            <a class="light waves-effect waves-orange btn-flat agree-button" {{action 'addGame'}}>
+                Add Game
+            </a>
+        </div>
+    </div>
+    {{#each match.games as |game|}}
+        <div>Game {{visible-index game.gameNumber}}:</div>
+    {{/each}}
+</div>

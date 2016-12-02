@@ -1,8 +1,8 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('match', 'Unit | Model | match', {
+moduleForModel('game', 'Unit | Model | game', {
   // Specify the other units that are required for this test.
-  needs: ['model:team', 'model:game']
+  needs: ['model:match']
 });
 
 test('it exists', function(assert) {

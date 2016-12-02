@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     submit() {
       const blueTeam = this.get('blueTeam');
       const orangeTeam = this.get('orangeTeam');
-      const matchDate = this.get('matchDate');
+      const matchDate = new Date(this.get('matchDate'));
       this.get('onCreate')(blueTeam, orangeTeam, matchDate);
       this.set('modalIsOpen', false);
     }
