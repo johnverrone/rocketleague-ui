@@ -11,7 +11,7 @@
             </a>
         </div>
     </div>
-    {{#each match.games as |game|}}
-        <div>Game {{visible-index game.gameNumber}}:</div>
+    {{#each match.sortedGames as |game|}}
+        <div>Game {{game.gameNumber}}:</div>
     {{/each}}
 </div>

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
   actions: {
     createMatch(blueTeamId, orangeTeamId, matchDate) {
       let blueTeam;
@@ -23,6 +24,18 @@ export default Ember.Controller.extend({
         });
 
         newMatch.save();
+      });
+    },
+
+    addGame(matchId) {
+      this.get('store').findRecord('match', matchId).then(match => {
+        let gameNumber = Math.max(...match.get('games').mapBy('gameNumber')) + 1;
+        gameNumber = isFinite(gameNumber) ? gameNumber : 1;
+        let newGame = this.get('store').createRecord('game', {
+          match: match,
+          gameNumber: gameNumber
+        });
+        newGame.save();
       });
     }
   }

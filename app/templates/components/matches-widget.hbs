@@ -6,7 +6,7 @@
   <div class="rl-card-body">
     {{create-match teams=teams onCreate=(action 'createMatch')}}
     {{#md-collection content=matches class='rl-collection' as |match|}}
-      {{match-item match=match}}
+      {{match-item match=match addGame=(action 'addGame')}}
     {{/md-collection}}
   </div>
 {{/md-card-panel}}

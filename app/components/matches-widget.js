@@ -13,6 +13,10 @@ export default Ember.Component.extend({
 
     createMatch(blueTeamId, orangeTeamId, matchDate) {
       this.get('onCreate')(blueTeamId, orangeTeamId, matchDate);
+    },
+
+    addGame(matchId) {
+      this.get('addGame')(matchId);
     }
   }
 });
