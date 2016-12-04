@@ -10,7 +10,7 @@
   </div>
   
   <div class="rl-card-body">
-    {{#md-card-collapsible class='rl-collection'}}
+    {{#md-card-collapsible class='rl-collection row'}}
       {{#each matchesByWeek as |match|}}
         {{#md-collapsible title=(get-matchup match.blueTeam.name match.orangeTeam.name)}}
           {{match-item match=match addGame=(action 'addGame')}}
@@ -18,6 +18,6 @@
       {{/each}}
     {{/md-card-collapsible}}
 
-    {{create-match teams=teams onCreate=(action 'createMatch')}}
+    {{create-match teams=teams weekNumber=basicTabsSelection onCreate=(action 'createMatch')}}
   </div>
 {{/md-card-panel}}

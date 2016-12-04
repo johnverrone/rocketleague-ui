@@ -5,6 +5,7 @@
 {{#if modalIsOpen}}
     {{#md-modal close='closeModal' class="test-modal"}}
         <div class="modal-content">
+          <h4 class="primary">Week {{weekNumber}}</h4>
           <form {{action "submit" on="submit"}} class="row">
             {{md-select content=teams
                 value=blueTeam

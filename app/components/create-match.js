@@ -15,7 +15,8 @@ export default Ember.Component.extend({
       const blueTeam = this.get('blueTeam');
       const orangeTeam = this.get('orangeTeam');
       const matchDate = new Date(this.get('matchDate'));
-      this.get('onCreate')(blueTeam, orangeTeam, matchDate);
+      const weekNumber = this.get('weekNumber');
+      this.get('onCreate')(blueTeam, orangeTeam, matchDate, weekNumber);
       this.set('modalIsOpen', false);
     }
   }

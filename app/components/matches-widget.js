@@ -28,8 +28,8 @@ export default Ember.Component.extend({
       this.set('isShowingModal', false);
     },
 
-    createMatch(blueTeamId, orangeTeamId, matchDate) {
-      this.get('onCreate')(blueTeamId, orangeTeamId, matchDate);
+    createMatch(blueTeamId, orangeTeamId, matchDate, weekNumber) {
+      this.get('onCreate')(blueTeamId, orangeTeamId, matchDate, weekNumber);
     },
 
     addGame(matchId) {

@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
   actions: {
-    createMatch(blueTeamId, orangeTeamId, matchDate) {
+    createMatch(blueTeamId, orangeTeamId, matchDate, weekNumber) {
       let blueTeam;
       let bluePromise = this.get('store').findRecord('team', blueTeamId).then(function(team) {
         blueTeam = team;
@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
           blueTeam: blueTeam, 
           orangeTeam: orangeTeam, 
           matchDate: matchDate,
-          weekNumber: 1
+          weekNumber: weekNumber
         });
 
         newMatch.save();
