@@ -8,7 +8,7 @@ $primary-color: #1E262B;
 $background-color: #222c32;
 $light-color: #D8DADA;
 $card-color: #2b343a;
-
+$border-color: rgba(255, 255, 255, 0.02);
 
 @import 'components/variables';
 @import "materialize";
@@ -42,7 +42,7 @@ th {
 }
 
 tr {
-  border-bottom: 1px solid rgba(255,255,255,.02) !important;
+  border-bottom: 1px solid $border-color !important;
 }
 
 .background {
@@ -60,15 +60,17 @@ tr {
 
 .rl-collection {
   border: none;
-}
+  box-shadow: none;
 
-.rl-collection .rl-collection-item {
-  background-color: $card-color;
-  border: none;
-}
+  .collapsible-header {
+    font-size: 1.5em;
+    background-color: inherit;
+    border-bottom-color: $border-color;
+  }
 
-.rl-collection .rl-collection-item.avatar {
-    min-height: inherit;
+  .collapsible-body {
+    border-bottom-color: $border-color;
+  }
 }
 
 .rl-card {
@@ -77,7 +79,7 @@ tr {
 }
 
 .rl-card-header {
-  background-color: rgba(255,255,255,.02);
+  background-color: $border-color;
   position: relative;
   padding: 12px 25px;
 }
@@ -95,4 +97,18 @@ tr {
 
 .modal {
   overflow-y: visible;
+}
+
+.rl-tabs {
+  .tabs {
+    background-color: inherit;
+
+    .tab a {
+      color: #D8DADA;
+    }
+
+    .indicator {
+      background-color: #D8DADA;
+    }
+  }
 }

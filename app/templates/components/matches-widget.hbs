@@ -2,11 +2,22 @@
   <div class="rl-card-header">
     <h3>{{title}}</h3>
   </div>
+  <div {{action 'tabClick'}}>
+  {{md-tabs
+    class='rl-tabs'
+    content=basicTabsContent
+    selected=basicTabsSelection}}
+  </div>
   
   <div class="rl-card-body">
+    {{#md-card-collapsible class='rl-collection'}}
+      {{#each matchesByWeek as |match|}}
+        {{#md-collapsible title=(get-matchup match.blueTeam.name match.orangeTeam.name)}}
+          {{match-item match=match addGame=(action 'addGame')}}
+        {{/md-collapsible}}
+      {{/each}}
+    {{/md-card-collapsible}}
+
     {{create-match teams=teams onCreate=(action 'createMatch')}}
-    {{#md-collection content=matches class='rl-collection' as |match|}}
-      {{match-item match=match addGame=(action 'addGame')}}
-    {{/md-collection}}
   </div>
 {{/md-card-panel}}

@@ -11,5 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{match-item}}`);
 
-  assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 'gamesv.AddGame');
+  assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 'nogameshavebeenplayed.');
 });

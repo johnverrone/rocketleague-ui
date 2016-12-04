@@ -20,7 +20,8 @@ export default Ember.Controller.extend({
         let newMatch = this.get('store').createRecord('match', {
           blueTeam: blueTeam, 
           orangeTeam: orangeTeam, 
-          matchDate: matchDate
+          matchDate: matchDate,
+          weekNumber: 1
         });
 
         newMatch.save();

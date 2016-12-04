@@ -1,17 +1,19 @@
-<div class="collection-item rl-collection-item avatar">
-    <div class="row">
-        <i class="circle light material-icons">games</i>
-        <div class="col s4">
-            <span class="title">{{match.blueTeam.name}} v. {{match.orangeTeam.name}}</span>
-            <p>{{match.matchDate}}</p>
-        </div>
-        <div class="col s8">
-            <a class="light waves-effect waves-orange btn-flat agree-button" {{action 'addGame'}}>
-                Add Game
-            </a>
-        </div>
-    </div>
-    {{#each match.sortedGames as |game|}}
-        <div>Game {{game.gameNumber}}:</div>
-    {{/each}}
-</div>
+{{#unless match.sortedGames}} 
+  <p>no games have been played.</p>
+{{/unless}}
+
+{{#md-table content=match.sortedGames class='bordered' as |game|}}
+  {{#md-table-col row=game key='name' header='Game Number'}}
+    {{game.gameNumber}}
+  {{/md-table-col}}
+  {{#md-table-col row=game key='name' header=(get match "blueTeam.name")}}
+    {{game.gameNumber}}
+  {{/md-table-col}}
+  {{#md-table-col row=game key='name' header=(get match "orangeTeam.name")}}
+    {{game.gameNumber}}
+  {{/md-table-col}}
+{{/md-table}}
+
+{{!--<a class="light waves-effect waves-orange btn-flat agree-button" {{action 'addGame'}}>
+  Add Game
+</a>--}}
