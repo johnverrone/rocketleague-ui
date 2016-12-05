@@ -1,3 +1,3 @@
-import CookieStore from 'ember-simple-auth/session-stores/cookie';
+import CookieStore from 'ember-simple-auth/addon/session-stores/cookie';
 
 export default CookieStore.extend();
