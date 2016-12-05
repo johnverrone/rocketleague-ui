@@ -13,5 +13,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{matches-widget matches=matches}}`);
 
-  assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 'Week1Week2Week3Week4Week5Week6CreateMatch');
+  assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 'CreateMatchWeek1Week2Week3Week4Week5Week6nomatcheshavebeenplayed');
 });

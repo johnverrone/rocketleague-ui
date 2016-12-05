@@ -1,5 +1,5 @@
 {{#unless match.sortedGames}} 
-  <p>no games have been played.</p>
+  <p class="center-align">no games have been played.</p>
 {{/unless}}
 
 {{#md-table content=match.sortedGames class='bordered' as |game|}}
@@ -17,4 +17,5 @@
 {{add-game weekNumber=match.weekNumber
   blueTeam=match.blueTeam
   orangeTeam=match.orangeTeam
-  onSubmit=(action 'addGame')}}
+  onSubmit=(action 'addGame')
+  class="center-align"}}

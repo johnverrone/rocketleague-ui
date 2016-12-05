@@ -1,6 +1,7 @@
 {{#md-card-panel id='match-card' class='rl-card'}}
   <div class="rl-card-header">
     <h3>{{title}}</h3>
+    {{create-match teams=teams weekNumber=basicTabsSelection onCreate=(action 'createMatch')}}    
   </div>
   <div {{action 'tabClick'}}>
   {{md-tabs
@@ -10,15 +11,17 @@
   </div>
   
   <div class="rl-card-body">
-    
-    {{create-match teams=teams weekNumber=basicTabsSelection onCreate=(action 'createMatch') class="center-align"}}
-
-    {{#md-card-collapsible class='rl-collection row'}}
-      {{#each matchesByWeek as |match|}}
-        {{#md-collapsible title=(get-matchup match.blueTeam.name match.orangeTeam.name)}}
-          {{match-item match=match addGame=(action 'addGame')}}
-        {{/md-collapsible}}
-      {{/each}}
-    {{/md-card-collapsible}}
+    {{#if matchesByWeek}}
+      {{#md-card-collapsible class='rl-collection row'}}
+        {{#each matchesByWeek as |match|}}
+          {{#md-collapsible title=(get-matchup match.blueTeam.name match.orangeTeam.name)}}
+            {{match-item match=match addGame=(action 'addGame')}}
+          {{/md-collapsible}}
+        {{/each}}
+      {{/md-card-collapsible}}
+    {{/if}}
+    {{#unless matchesByWeek}}
+      <p class="center-align">no matches have been played</p>
+    {{/unless}}
   </div>
 {{/md-card-panel}}

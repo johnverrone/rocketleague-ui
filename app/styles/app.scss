@@ -59,18 +59,18 @@ tr {
 }
 
 .rl-collection {
-  border: none;
-  box-shadow: none;
+  border-color: $primary-color;
 
   .collapsible-header {
     font-size: 1.5em;
     padding: 20px;
     background-color: inherit;
-    border-bottom-color: $border-color;
+    border-bottom-color: $primary-color;
   }
 
   .collapsible-body {
-    border-bottom-color: $border-color;
+    border-bottom-color: $primary-color;
+    background-color: $primary-color;
   }
 }
 
@@ -81,6 +81,9 @@ tr {
 
 .rl-card-header {
   background-color: $border-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   padding: 12px 25px;
 }
@@ -112,4 +115,9 @@ tr {
       background-color: #D8DADA;
     }
   }
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
 }
