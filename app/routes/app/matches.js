@@ -5,7 +5,9 @@ export default Ember.Route.extend({
   model() {
     return RSVP.hash({
       matches: this.get('store').findAll('match'),
-      teams: this.get('store').findAll('team')
+      teams: this.get('store').findAll('team'),
+      players: this.get('store').findAll('player'),
+      gamePlayers: this.get('store').findAll('game-player')
     });
   }
 });

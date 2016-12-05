@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('match-item', 'Integration | Component | match item', {
+moduleForComponent('add-game', 'Integration | Component | add game', {
   integration: true
 });
 
@@ -9,7 +9,7 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{match-item}}`);
+  this.render(hbs`{{add-game}}`);
 
-  assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 'nogameshavebeenplayed.AddGame');
+  assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''), 'AddGame');
 });

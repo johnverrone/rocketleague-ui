@@ -7,13 +7,14 @@
     {{game.gameNumber}}
   {{/md-table-col}}
   {{#md-table-col row=game key='name' header=(get match "blueTeam.name")}}
-    {{game.gameNumber}}
+    0
   {{/md-table-col}}
   {{#md-table-col row=game key='name' header=(get match "orangeTeam.name")}}
-    {{game.gameNumber}}
+    0
   {{/md-table-col}}
 {{/md-table}}
 
-{{!--<a class="light waves-effect waves-orange btn-flat agree-button" {{action 'addGame'}}>
-  Add Game
-</a>--}}
+{{add-game weekNumber=match.weekNumber
+  blueTeam=match.blueTeam
+  orangeTeam=match.orangeTeam
+  onSubmit=(action 'addGame')}}

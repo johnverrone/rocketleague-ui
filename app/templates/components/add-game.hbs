@@ -1,0 +1,49 @@
+{{md-btn action='openModal'
+    class='light'
+    text='Add Game'}}
+
+{{#if modalIsOpen}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+          <h4 class="primary">Week {{weekNumber}} - {{blueTeam.name}} v. {{orangeTeam.name}}</h4>
+          <form {{action "submit" on="submit"}} class="row">
+            <h6 class="primary">{{blueTeam.name}}</h6>
+              {{#md-table content=blueTeam.players class='bordered primary' as |player|}}
+                {{#md-table-col row=player key='name' header='Player'}}
+                  {{player.username}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Goals'}}
+                  {{md-input type="number" value=goals}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Assists'}}
+                  {{md-input type="number" value=goals}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Saves'}}
+                  {{md-input type="number" value=goals}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Shots'}}
+                  {{md-input type="number" value=goals}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Score'}}
+                  {{md-input type="number" value=goals}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='MVP'}}
+                  {{md-select content=mvpOptions
+                    value=mvp
+                    optionLabelPath="content.label"
+                    optionValuePath="content.value"}}
+                {{/md-table-col}}
+              {{/md-table}}
+            <h6 class="primary">{{orangeTeam.name}}</h6>
+          </form>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'submit'}}>
+                Create
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}
