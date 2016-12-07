@@ -4,37 +4,51 @@
 
 {{#if modalIsOpen}}
     {{#md-modal close='closeModal' class="test-modal"}}
-        <div class="modal-content">
+        <div class="modal-content new-game-form">
           <h4 class="primary">Week {{weekNumber}} - {{blueTeam.name}} v. {{orangeTeam.name}}</h4>
           <form {{action "submit" on="submit"}} class="row">
-            <h6 class="primary">{{blueTeam.name}}</h6>
+            <h5 class="primary">{{blueTeam.name}}</h5>
               {{#md-table content=blueTeam.players class='bordered primary' as |player|}}
                 {{#md-table-col row=player key='name' header='Player'}}
                   {{player.username}}
                 {{/md-table-col}}
                 {{#md-table-col row=player key='name' header='Goals'}}
-                  {{md-input type="number" value=goals}}
+                  {{md-input type="number" value=player.goals}}
                 {{/md-table-col}}
                 {{#md-table-col row=player key='name' header='Assists'}}
-                  {{md-input type="number" value=goals}}
+                  {{md-input type="number" value=player.assists}}
                 {{/md-table-col}}
                 {{#md-table-col row=player key='name' header='Saves'}}
-                  {{md-input type="number" value=goals}}
+                  {{md-input type="number" value=player.saves}}
                 {{/md-table-col}}
                 {{#md-table-col row=player key='name' header='Shots'}}
-                  {{md-input type="number" value=goals}}
+                  {{md-input type="number" value=player.shots}}
                 {{/md-table-col}}
                 {{#md-table-col row=player key='name' header='Score'}}
-                  {{md-input type="number" value=goals}}
-                {{/md-table-col}}
-                {{#md-table-col row=player key='name' header='MVP'}}
-                  {{md-select content=mvpOptions
-                    value=mvp
-                    optionLabelPath="content.label"
-                    optionValuePath="content.value"}}
+                  {{md-input type="number" value=player.score}}
                 {{/md-table-col}}
               {{/md-table}}
-            <h6 class="primary">{{orangeTeam.name}}</h6>
+            <h5 class="primary">{{orangeTeam.name}}</h5>
+              {{#md-table content=orangeTeam.players class='bordered primary' as |player|}}
+                {{#md-table-col row=player key='name' header='Player'}}
+                  {{player.username}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Goals'}}
+                  {{md-input type="number" value=player.goals}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Assists'}}
+                  {{md-input type="number" value=player.assists}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Saves'}}
+                  {{md-input type="number" value=player.saves}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Shots'}}
+                  {{md-input type="number" value=player.shots}}
+                {{/md-table-col}}
+                {{#md-table-col row=player key='name' header='Score'}}
+                  {{md-input type="number" value=player.score}}
+                {{/md-table-col}}
+              {{/md-table}}
           </form>
         </div>
         <div class="modal-footer">

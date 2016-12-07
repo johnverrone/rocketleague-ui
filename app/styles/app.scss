@@ -121,3 +121,18 @@ tr {
   display: flex;
   justify-content: space-around;
 }
+
+
+.new-game-form {
+  td, th {
+    padding: 0 5px;
+  }
+
+  h5 {
+    margin: 2rem 0;
+  }
+
+  .input-field {
+    margin-top: 0;
+  }
+}
