@@ -14,7 +14,7 @@
     {{#if matchesByWeek}}
       {{#md-card-collapsible class='rl-collection row'}}
         {{#each matchesByWeek as |match|}}
-          {{#md-collapsible title=(get-matchup match.blueTeam.name match.orangeTeam.name)}}
+          {{#md-collapsible title=(get-matchup match.blueTeam.name match.orangeTeam.name (date-formatter null match.matchDate))}}
             {{match-item match=match addGame=(action 'addGame')}}
           {{/md-collapsible}}
         {{/each}}
