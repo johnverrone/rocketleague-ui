@@ -28,7 +28,7 @@ export default Ember.Controller.extend({
       });
     },
 
-    addGame(matchId) {
+    addGame(matchId, blueTeamPlayers, orangeTeamPlayers) {
       this.get('store').findRecord('match', matchId).then(match => {
         let gameNumber = Math.max(...match.get('games').mapBy('gameNumber')) + 1;
         gameNumber = isFinite(gameNumber) ? gameNumber : 1;
@@ -36,7 +36,38 @@ export default Ember.Controller.extend({
           match: match,
           gameNumber: gameNumber
         });
-        newGame.save();
+        newGame.save().then(game => {
+          blueTeamPlayers.forEach(gamePlayer => {
+            this.get('store').findRecord('player', gamePlayer.id).then(existingPlayer => {
+              let newGamePlayer = this.get('store').createRecord('gamePlayer', {
+                goals: gamePlayer.goals,
+                assists: gamePlayer.assists,
+                saves: gamePlayer.saves,
+                shots: gamePlayer.shots,
+                score: gamePlayer.score,
+                mvp: false,
+                game: game,
+                player: existingPlayer
+              });
+              newGamePlayer.save();
+            });
+          });
+          orangeTeamPlayers.forEach(gamePlayer => {
+            this.get('store').findRecord('player', gamePlayer.id).then(existingPlayer => {
+              let newGamePlayer = this.get('store').createRecord('gamePlayer', {
+                goals: gamePlayer.goals,
+                assists: gamePlayer.assists,
+                saves: gamePlayer.saves,
+                shots: gamePlayer.shots,
+                score: gamePlayer.score,
+                mvp: false,
+                game: game,
+                player: existingPlayer
+              });
+              newGamePlayer.save();
+            });
+          });
+        });
       });
     }
   }

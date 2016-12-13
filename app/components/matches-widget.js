@@ -32,8 +32,8 @@ export default Ember.Component.extend({
       this.get('onCreate')(blueTeamId, orangeTeamId, matchDate, weekNumber);
     },
 
-    addGame(matchId) {
-      this.get('addGame')(matchId);
+    addGame(matchId, blueTeamPlayers, orangeTeamPlayers) {
+      this.get('addGame')(matchId, blueTeamPlayers, orangeTeamPlayers);
     },
 
     tabClick() {

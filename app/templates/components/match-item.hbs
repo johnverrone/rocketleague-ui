@@ -7,10 +7,10 @@
     {{game.gameNumber}}
   {{/md-table-col}}
   {{#md-table-col row=game key='name' header=(get match "blueTeam.name")}}
-    0
+    {{game.blueTeamScore}}
   {{/md-table-col}}
   {{#md-table-col row=game key='name' header=(get match "orangeTeam.name")}}
-    0
+    {{game.orangeTeamScore}}
   {{/md-table-col}}
 {{/md-table}}
 

@@ -13,6 +13,12 @@ export default Ember.Component.extend({
 
     closeModal() {
       this.set('modalIsOpen', false);
+    },
+
+    submit() {
+      const blueTeamPlayers = this.get('blueTeam.players');
+      const orangeTeamPlayers = this.get('orangeTeam.players');
+      this.get('onSubmit')(blueTeamPlayers, orangeTeamPlayers);
     }
   }
 });
