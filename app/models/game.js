@@ -6,8 +6,8 @@ export default DS.Model.extend({
   gameNumber: DS.attr('number'),
   gamePlayers: DS.hasMany('game-player'),
 
-  blueTeamPlayers: Ember.computed.filterBy('gamePlayers', 'player.team.id', '2'),
-  orangeTeamPlayers: Ember.computed.filterBy('gamePlayers', 'player.team.id', '1'),
+  blueTeamPlayers: Ember.computed.filterBy('gamePlayers', 'player.team.id', '1'),
+  orangeTeamPlayers: Ember.computed.filterBy('gamePlayers', 'player.team.id', '2'),
 
   blueTeamGoals: Ember.computed.mapBy('blueTeamPlayers', 'goals'),
   blueTeamScore: Ember.computed.sum('blueTeamGoals'),

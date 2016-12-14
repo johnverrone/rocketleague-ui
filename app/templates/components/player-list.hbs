@@ -17,6 +17,14 @@
       {{#md-table-col row=player key='lastName' header='Last Name'}}
         {{player.lastName}}
       {{/md-table-col}}
+      {{#md-table-col row=player key='lastName' header='Delete'}}
+        {{#md-btn
+          action='delete'
+          actionArg=player.id
+          buttonType='flat' 
+          class='light'}}X
+        {{/md-btn}}
+      {{/md-table-col}}
     {{/md-table}}
   </div>
 {{/md-card-panel}}

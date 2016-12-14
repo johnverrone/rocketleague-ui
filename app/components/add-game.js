@@ -19,6 +19,7 @@ export default Ember.Component.extend({
       const blueTeamPlayers = this.get('blueTeam.players');
       const orangeTeamPlayers = this.get('orangeTeam.players');
       this.get('onSubmit')(blueTeamPlayers, orangeTeamPlayers);
+      this.set('modalIsOpen', false);
     }
   }
 });
