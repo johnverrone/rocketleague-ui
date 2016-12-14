@@ -11,11 +11,8 @@
       {{#md-table-col row=player key='username' header='Username'}}
         {{player.username}}
       {{/md-table-col}}
-      {{#md-table-col row=player key='firstName' header='First Name'}}
-        {{player.firstName}}
-      {{/md-table-col}}
-      {{#md-table-col row=player key='lastName' header='Last Name'}}
-        {{player.lastName}}
+      {{#md-table-col row=player key='firstName' header='Name'}}
+        {{player.fullName}}
       {{/md-table-col}}
       {{#md-table-col row=player key='team' header='Team'}}
         {{player.team.name}}

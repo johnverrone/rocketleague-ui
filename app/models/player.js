@@ -5,5 +5,10 @@ export default DS.Model.extend({
   firstName: DS.attr(),
   lastName: DS.attr(),
   team: DS.belongsTo('team'),
-  gamePlayers: DS.hasMany('game-player')
+  gamePlayers: DS.hasMany('game-player'),
+
+  fullName: Ember.computed('firstName', 'lastName', function() {
+    return `${this.get('firstName')} ${this.get('lastName')}`;
+  })
+  
 });
