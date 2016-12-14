@@ -17,6 +17,9 @@
       {{#md-table-col row=player key='lastName' header='Last Name'}}
         {{player.lastName}}
       {{/md-table-col}}
+      {{#md-table-col row=player key='team' header='Team'}}
+        {{player.team.name}}
+      {{/md-table-col}}
       {{#md-table-col row=player key='lastName' header='Delete'}}
         {{#md-btn
           action='delete'
