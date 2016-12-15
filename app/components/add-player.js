@@ -20,6 +20,7 @@ export default Ember.Component.extend({
         team: this.get('team')
       };
       this.get('onAdd')(newUser);
+      this.set('modalIsOpen', false);
     }
   }
 });
