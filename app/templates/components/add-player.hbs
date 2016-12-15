@@ -1,0 +1,36 @@
+{{md-btn action='openModal'
+    class='light'
+    text='Add Player'}}
+
+{{#if modalIsOpen}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+          <h4 class="primary">New Player</h4>
+          <form {{action "submit" on="submit"}}>
+            <div class="row">
+              {{md-input type="text" value=username label="Username" class="col s12 primary"}} 
+            </div>
+            <div class="row">
+              {{md-input type="text" value=firstName label="First Name" class="col s6 primary"}} 
+              {{md-input type="text" value=lastName label="Last Name" class="col s6 primary"}} 
+            </div>
+            <div class="row">
+              {{md-select content=teams
+                value=team
+                label="Team"
+                prompt="Please choose..."
+                optionLabelPath="content.name"
+                optionValuePath="content.id" class="col s12 primary"}}
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'submit'}}>
+                Add
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}

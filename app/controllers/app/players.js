@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   sortProperties: ['id:asc'],
-  sortedModel: Ember.computed.sort('model', 'sortProperties'),
+  sortedPlayers: Ember.computed.sort('model.players', 'sortProperties'),
 
   actions: {
     deletePlayer(id) {
