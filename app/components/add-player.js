@@ -9,6 +9,17 @@ export default Ember.Component.extend({
 
     closeModal() {
       this.set('modalIsOpen', false);
+    },
+
+    submit() {
+      const newUser = {
+        username: this.get('username'),
+        emailAddress: this.get('emailAddress'),
+        firstName: this.get('firstName'),
+        lastName: this.get('lastName'),
+        team: this.get('team')
+      };
+      this.get('onAdd')(newUser);
     }
   }
 });

@@ -1,7 +1,7 @@
 {{#md-card-panel id='match-card' class='rl-card'}}
   <div class="rl-card-header">
     <h3>{{title}}</h3>
-    {{add-player teams=teams}}
+    {{add-player teams=teams onAdd=(action 'addPlayer')}}
   </div>
   
   <div class="rl-card-body">
